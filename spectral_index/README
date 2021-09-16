@@ -1,0 +1,27 @@
+The data in this directory are taken from the observations conducted on 2018-03-13 between (UTC) 20:12 and 21:24:
+
+observation-id central frequency
+1205008192     88 MHz
+1205007112     118 MHz
+1205011432     154 MHz
+1205010352     185 MHz
+1205009272     215 MHz
+
+Each observation has a set of files associated with it:
+*MHz_aligned.txt -- the raw flux density values at each frequency (row) and time (column) aligned by folding on period P = 1091.1690s
+*MHz_dedisper.txt -- the aligned data after applying a dedispersion correction of 57 pc cm^-3
+*MHz_freq.txt    -- the frequencies of each row
+*MHz_scale.txt   -- the flux density scale factors applied to each file, derived from comparing to nearby known sources
+
+Scale factors were determined by:
+
+Croppping to nearest 700x700 pix around the transient for 2-minute primary-beam corrected deep cleaned snapshots
+Source-finding at >10-sigma (using Aegean; Hancock et al. 2018)
+Cross-matching to GGSM_sparse_unresolved (github.com/nhurleywalker/GLEAM-X_pipeline/models) with a 45~arcsec radius
+Calculate predicted flux density of sources via S_200*(nu/200 ^ alpha)
+Calculate (10^) median of (log10) ratio (predicted : measured int_flux)
+
+plot_aligned_arrays.py will generate three plots:
+ - data_2D -- a plot that shows the aligned and dedispersed combined dynamic spectra for the five observations
+ - average_profile -- a plot that shows what data was selected to go into the spectral index calculation
+ - spectrum -- the resulting spectral index plot
