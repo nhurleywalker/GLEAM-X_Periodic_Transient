@@ -1,0 +1,3 @@
+These calibration solutions were generated on 40-kHz resolution observations via a sky model largely based on GLEAM (Hurley-Walker et al. 2017, 2019c), using the "Mitchcal" algorithm (Offringa et al. 2016). They can be applied to measurement sets via "applycal", found as part of the MWA data reduction software: https://github.com/ICRAR/mwa-reduce
+
+For most observations, the calibration solution was generated from that observation. However in some cases, the solutions did not converge, in which case the solutions were transferred from a nearby working observation. These cases are shown in the text file "transfers.txt".
