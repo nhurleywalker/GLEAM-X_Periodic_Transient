@@ -1,0 +1,80 @@
+# obsid path starttime_(sample) endtime_(sample) startchan_(chan_number) endchan_(chan_number) mfs_vmin_(Jy/beam) mfs_vmax_(Jy/beam) on_start on_stop cntr_freq_Hz status
+#1197164160 /data/mwa/nms/fits 0 64 0 95 -1 20 0 64 185600000
+#1198788968 /data/mwa/nms/fits 0 351 0 95 -1 20 0 351 119040000 Can't see source in movie
+1198967912 /data/mwa/nms/fits 0 495 0 95 -1 10 8 28 185600000 Possible bimodal max pos -- wait for Natasha to try and improve the calibration -- BROKEN (according to Natasha)
+#1199048648 /data/mwa/nms/fits 0 239 0 95 -1 20 0 239 185600000 Can't see source in movie
+1199052968 /data/mwa/nms/fits 0 412 0 95 -1 10 85 151 185600000 complete
+1199053856 /data/mwa/nms/fits 0 591 0 95 -1 10 490 552 185600000 complete
+1199055040 /data/mwa/nms/fits 0 591 0 95 -1 10 275 370 185600000 complete
+1199220992 /data/mwa/nms/fits 0 351 0 95 -1 10 218 262 88320000 complete
+1199496944 /data/mwa/nms/fits 0 591 0 95 -1 10 354 412 185600000 complete
+1199498128 /data/mwa/nms/fits 0 591 0 95 -1 10 168 230 185600000 complete
+1199499224 /data/mwa/nms/fits 0 591 0 95 -1 10 160 217 185600000 complete
+1199503440 /data/mwa/nms/fits 0 591 0 95 -1 10 462 519 185600000 complete
+#1199503736 /data/mwa/nms/fits 0 519 0 95 -1 10 10 500 185600000 Can't see source in MFS movie -- No MFS images? Natasha says to nuke this one (Slack, Direct messages, 15 Mar 2021)
+1199504624 /data/mwa/nms/fits 0 591 0 95 -1 10 279 328 185600000 complete
+1199505792 /data/mwa/nms/fits 0 591 0 95 -1 10 116 173 185600000 complete
+1199506680 /data/mwa/nms/fits 0 591 0 95 -1 10 520 582 185600000 complete
+1199509008 /data/mwa/nms/fits 0 591 0 95 -1 10 239 287 185600000 complete
+1199510192 /data/mwa/nms/fits 0 111 0 95 -1 10 56 99 185600000 complete
+1199573432 /data/mwa/nms/fits 0 591 0 95 -1 10 124 195 185600000 complete
+1199575504 /data/mwa/nms/fits 0 591 0 95 -1 10 332 412 185600000 complete
+1199576664 /data/mwa/nms/fits 0 591 0 95 -1 10 207 278 185600000 complete
+1199591976 /data/mwa/nms/fits 0 479 0 95 -1 10 151 202 185600000 complete
+1199666136 /data/mwa/nms/fits 0 511 0 95 -1 10 218 264 185600000 complete
+1199677168 /data/mwa/nms/fits 0 479 0 95 -1 10 8 22 185600000 complete
+1200354592 /data/mwa/nms/fits 0 511 0 95 -1 10 280 337 185600000 complete
+1200365608 /data/mwa/nms/fits 0 463 0 95 -1 10 72 126 185600000 complete
+1201042112 /data/mwa/nms/fits 0 591 0 95 -1 10 24 82 185600000 complete
+1201213368 /data/mwa/nms/fits 0 511 0 95 -1 10 134 173 185600000 complete
+1201311440 /data/mwa/nms/fits 0 463 0 95 -1 10 391 427 185600000 complete
+1201473104 /data/mwa/nms/fits 0 591 0 95 -1 10 30 60 185600000 complete
+1201559168 /data/mwa/nms/fits 0 495 0 95 -1 10 296 323 185600000 complete
+1201647528 /data/mwa/nms/fits 0 591 0 95 -1 10 335 357 185600000 complete
+#1203110784 /data/mwa/nms/fits 0 239 0 95 -1 10 0 239 88320000 Can't see source in movie
+#1203879960 /data/mwa/nms/fits 0 239 0 95 -1 10 196 239 88320000 Unsure if source is present
+1203884400 /data/mwa/nms/fits 0 239 0 95 -1 15 25 51 154880000 complete
+1203886504 /data/mwa/nms/fits 0 239 0 95 -1 10 176 214 154880000 complete
+1203887584 /data/mwa/nms/fits 0 239 0 95 -1 10 208 231 119040000 complete
+1204056728 /data/mwa/nms/fits 0 239 0 95 -1 15 135 182 154880000 complete
+1204058952 /data/mwa/nms/fits 0 239 0 95 -1 10 40 104 185600000 complete
+1204060032 /data/mwa/nms/fits 0 239 0 95 -1 10 65 131 154880000 complete
+1204224736 /data/mwa/nms/fits 0 239 0 95 -1 15 191 227 119040000 complete
+1204225816 /data/mwa/nms/fits 0 239 0 95 -1 10 0 239 88320000 Can't see source in movie
+1204225936 /data/mwa/nms/fits 0 239 0 95 -1 10 8 21 119040000 complete
+1204227016 /data/mwa/nms/fits 0 239 0 95 -1 10 9 81 88320000 complete
+1204229176 /data/mwa/nms/fits 0 239 0 95 -1 10 8 70 185600000 complete
+1204231280 /data/mwa/nms/fits 0 239 0 95 -1 10 165 225 185600000 complete
+1204232360 /data/mwa/nms/fits 0 239 0 95 -1 10 191 231 154880000 complete
+1204233560 /data/mwa/nms/fits 0 239 0 95 -1 10 8 36 154880000 complete
+1204314264 /data/mwa/nms/fits 0 239 0 95 -1 20 57 81 216320000 complete
+1204315344 /data/mwa/nms/fits 0 239 0 95 -1 20 80 104 185600000 complete
+1204317560 /data/mwa/nms/fits 0 239 0 95 -1 15 8 45 216320000 complete
+1204829208 /data/mwa/nms/fits 0 239 0 95 -1 10 148 191 154880000 complete
+1204830288 /data/mwa/nms/fits 0 239 0 95 -1 10 137 228 119040000 complete
+1204831488 /data/mwa/nms/fits 0 239 0 95 -1 10 8 14 119040000 complete
+1204833584 /data/mwa/nms/fits 0 239 0 95 -1 10 88 183 119040000 complete
+1204834664 /data/mwa/nms/fits 0 239 0 95 -1 10 154 231 88320000 complete
+1204837904 /data/mwa/nms/fits 0 239 0 95 -1 10 216 231 154880000 complete
+1204998416 /data/mwa/nms/fits 0 239 0 95 -1 15 8 22 119040000 complete
+1204999496 /data/mwa/nms/fits 0 239 0 95 -1 10 15 82 88320000 complete
+1205001656 /data/mwa/nms/fits 0 239 0 95 -1 10 26 62 185600000 complete
+1205002736 /data/mwa/nms/fits 0 239 0 95 -1 10 8 94 154880000 complete
+1205003816 /data/mwa/nms/fits 0 239 0 95 -1 10 30 136 119040000 complete
+1205006032 /data/mwa/nms/fits 0 239 0 95 -1 10 8 53 154880000 complete
+1205007112 /data/mwa/nms/fits 0 239 0 95 -1 10 8 95 119040000 complete
+1205008192 /data/mwa/nms/fits 0 239 0 95 -1 10 32 157 88320000 complete
+1205009272 /data/mwa/nms/fits 0 239 0 95 -1 10 8 108 216320000 complete
+1205010352 /data/mwa/nms/fits 0 239 0 95 -1 10 15 145 185600000 complete
+1205011432 /data/mwa/nms/fits 0 239 0 95 -1 10 62 160 154880000 complete
+1205016808 /data/mwa/nms/fits 0 591 0 95 -1 10 219 312 185600000 complete
+1205107248 /data/mwa/nms/fits 0 591 0 95 -1 10 511 548 185600000 complete
+#1205110632 /data/mwa/nms/fits 0 335 0 95 -1 10 8 323 185600000 Can't see source in MFS movie -- BROKEN (according to Natasha)
+1205259184 /data/mwa/nms/fits 0 239 0 95 -1 10 8 57 88320000 complete
+1205267888 /data/mwa/nms/fits 0 239 0 95 -1 10 8 112 88320000 complete
+1205537200 /data/mwa/nms/fits 0 479 0 95 -1 10 375 411 185600000 complete
+1205955160 /data/mwa/nms/fits 0 239 0 95 -1 10 211 228 216320000 complete
+1205955280 /data/mwa/nms/fits 0 239 0 95 -1 10 8 15 216320000 complete
+1205956360 /data/mwa/nms/fits 0 239 0 95 -1 10 8 36 216320000 complete
+1205962840 /data/mwa/nms/fits 0 239 0 95 -1 10 131 170 216320000 complete
+1206307680 /data/mwa/nms/fits 0 239 0 95 -1 10 26 52 185600000 complete
