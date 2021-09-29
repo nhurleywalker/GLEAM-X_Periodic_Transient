@@ -8,7 +8,7 @@ from matplotlib.ticker import FormatStrFormatter
 
 # Nature requires sans-serif fonts
 plt.rcParams.update({
-    "text.usetex": True,
+    "text.usetex": False,
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica"]})
 
