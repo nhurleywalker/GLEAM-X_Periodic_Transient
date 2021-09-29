@@ -1,0 +1,299 @@
+SIMPLE  =                    T / conforms to FITS standard                      BITPIX  =                    8 / array data type                                NAXIS   =                    0 / number of array dimensions                     EXTEND  =                    T                                                  GPSTIME =           1206307680 / [s] GPS time of observation start              EXPOSURE=                  104 / [s] duration of observation                    FILENAME= 'shadowaskap'        / Name of observation                            MJD     =    58205.89423611111 / [days] MJD of observation                      DATE-OBS= '2018-03-28T21:27:42' / [UT] Date and time of observation             LST     =     264.838833095005 / [deg] LST                                      HA      = '-00:40:14.11'       / [hours] hour angle of pointing center          AZIMUTH =              198.435 / [deg] Azimuth of pointing center               ALTITUDE=              67.9813 / [deg] Altitude of pointing center              RA      =    254.4454203523638 / [deg] RA of pointing center                    DEC     =   -47.22561180762671 / [deg] Dec of pointing center                   RAPHASE =         251.55523375 / [deg] RA of desired phase center               DECPHASE=    -45.5952071666667 / [deg] DEC of desired phase center              ATTEN_DB=                  1.0 / [dB] global analogue attenuation, in dB        SUN-DIST=     107.638182106339 / [deg] Distance from pointing center to Sun     MOONDIST=     104.880392672531 / [deg] Distance from pointing center to Moon    JUP-DIST=     36.0393477599204 / [deg] Distance from pointing center to Jupiter GRIDNAME= 'sweet   '           / Pointing grid name                             GRIDNUM =                   33 / Pointing grid number                           CREATOR = 'shadowaskap'        / Observation creator                            PROJECT = 'G0034   '           / Project ID                                     MODE    = 'HW_LFILES'          / Observation mode                               RECVRS  = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16' / Active receivers           DELAYS  = '3,2,1,0,6,5,4,3,9,8,7,6,12,11,10,9' / Beamformer delays              CALIBRAT=                    F / Not intended for calibration                   CENTCHAN=                  145 / Center coarse channel                          CHANNELS= '133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149&'CONTINUE  ',150,151,152,153,154,155,156&'                                       CONTINUE  '' / Coarse channels                                                  CHANSEL = '0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23' / IndiSUN-ALT =     -12.746307783781 / [deg] Altitude of Sun                          FINECHAN=                   10 / [kHz] Fine channel width - correlator freq_res INTTIME =                  0.5 / [s] Individual integration time                NAV_FREQ=                    1 / Assumed frequency averaging                    NSCANS  =                  208 / Number of time instants in correlation productsNINPUTS =                  256 / Number of inputs into the correlation products NCHANS  =                 3072 / Number of (averaged) fine channels in spectrum BANDWDTH=                30.72 / [MHz] Total bandwidth                          FREQCENT=               184.96 / [MHz] Center frequency of observation          TIMEOFF =                    0 / [s] Deprecated, use QUACKTIM or GOODTIME       DATESTRT= '2018-03-28T21:27:42' / [UT] Date and time of correlations start      VERSION =                  2.0 / METAFITS version number                        TELESCOP= 'MWA     '                                                            INSTRUME= '128T    '                                                            QUACKTIM=                  0.5 / Seconds of bad data after observation starts   GOODTIME=         1522272462.5 / OBSID+QUACKTIME as Unix timestamp              DATE    = '2021-02-12T14:24:14' / UT Date of file creation                      COMMENT After an observation starts, the receiver hardware changes take a       COMMENT few seconds to stabilise. The 24 GPU boxes start saving data to         COMMENT their output files anywhere from a second _before_ the start of         COMMENT the observation to a few seconds after, and not necessarily at the      COMMENT same time on each gpubox.                                               COMMENT QUACKTIM and GOODTIME represent the start of the first uncontaminated   COMMENT data, rounded up to the next time-averaged data packet. Note that this  COMMENT time may be before the first actual data in some or all gpubox files.   HISTORY Created by user apache                                                  HISTORY Created on host mwa-django01p.curtin.edu.au                             HISTORY Command: "mod_wsgi"                                                     END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / array data type                                NAXIS   =                    2 / number of array dimensions                     NAXIS1  =                  143 / length of dimension 1                          NAXIS2  =                  256 / length of dimension 2                          PCOUNT  =                    0 / number of group parameters                     GCOUNT  =                    1 / number of groups                               TFIELDS =                   17 / number of table fields                         TTYPE1  = 'Input   '                                                            TFORM1  = 'I       '                                                            TTYPE2  = 'Antenna '                                                            TFORM2  = 'I       '                                                            TTYPE3  = 'Tile    '                                                            TFORM3  = 'I       '                                                            TTYPE4  = 'TileName'                                                            TFORM4  = '8A      '                                                            TTYPE5  = 'Pol     '                                                            TFORM5  = 'A       '                                                            TTYPE6  = 'Rx      '                                                            TFORM6  = 'I       '                                                            TTYPE7  = 'Slot    '                                                            TFORM7  = 'I       '                                                            TTYPE8  = 'Flag    '                                                            TFORM8  = 'I       '                                                            TTYPE9  = 'Length  '                                                            TFORM9  = '14A     '                                                            TTYPE10 = 'North   '                                                            TFORM10 = 'E       '                                                            TUNIT10 = 'm       '                                                            TTYPE11 = 'East    '                                                            TFORM11 = 'E       '                                                            TUNIT11 = 'm       '                                                            TTYPE12 = 'Height  '                                                            TFORM12 = 'E       '                                                            TUNIT12 = 'm       '                                                            TTYPE13 = 'Gains   '                                                            TFORM13 = '24I     '                                                            TTYPE14 = 'BFTemps '                                                            TFORM14 = 'E       '                                                            TUNIT14 = 'degC    '                                                            TTYPE15 = 'Delays  '                                                            TFORM15 = '16I     '                                                            TTYPE16 = 'VCSOrder'                                                            TFORM16 = 'I       '                                                            TTYPE17 = 'Flavors '                                                            TFORM17 = '10A     '                                                            EXTNAME = 'TILEDATA'           / extension name                                 END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 hTile104 Y 
+   EL_-752.04    ¬À\ƒk3Cªõ# D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33           	      
+ 	  LMR400_524   hTile104 X 
+   EL_-752.04    ¬À\ƒk3Cªõ# D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33           	      
+ 	 LMR400_524   gTile103 Y 
+   EL_-1187.51   CœÅƒ„¶C∫Øﬂ F F F G H J K M N N O O O P Q S T U V W W W W XAÎ33          	         	 RG6_150      gTile103 X 
+   EL_-1187.51   CœÅƒ„¶C∫Øﬂ F F F G H J K M N N O O O P Q S T U V W W W W XAÎ33          	      
+ 	 RG6_150      fTile102 Y 
+   EL_-896.53    D$Z√Ù¯¥C∫t C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÊff          	      
+ 	 LMR400_400   fTile102 X 
+   EL_-896.53    D$Z√Ù¯¥C∫t C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÊff          	      
+ 	 LMR400_400   eTile101 Y 
+   EL_-898.66    D 1ƒÇÚC∫MP C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A»            	      
+ 	 LMR400_400   eTile101 X 
+   EL_-898.66    D 1ƒÇÚC∫MP C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A»             	       
+ 	 LMR400_400   lTile108 Y 
+   EL_-753.04    D°∫ƒÄB=Cª˛ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÊff          	      
+ 	  LMR400_524 	  lTile108 X 
+   EL_-753.04    D°∫ƒÄB=Cª˛ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÊff          	      
+ 	 $LMR400_524 
+  kTile107 Y 
+   EL_-752.50    BÆ	7ƒÜÛ3CºÅ' D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ          	      
+ 	 (LMR400_524   kTile107 X 
+   EL_-752.50    BÆ	7ƒÜÛ3CºÅ' D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ           	      
+ 	 ,LMR400_524   jTile106 Y 
+   EL_-1187.86   CT+ƒ+A∫Cª5 F F F G H J K M N N O O O P Q S T U V W W W W XAÏÃÕ          	      
+ 	 0RG6_150      jTile106 X 
+   EL_-1187.86   CT+ƒ+A∫Cª5 F F F G H J K M N N O O O P Q S T U V W W W W XAÏÃÕ          	      
+ 	 4RG6_150      iTile105 Y 
+   EL_-1091.10   CAHƒ#]„Cª;# F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÃÕ          	      
+ 	 8RG6_230      iTile105 X 
+   EL_-1091.10   CAHƒ#]„Cª;# F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÃÕ          	      
+ 	 <RG6_230     ; öTile154 Y    EL_-756.83    √ ÜfBBèCªZ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏÃÕ           	      
+ 	 LMR400_524  ; öTile154 X    EL_-756.83    √ ÜfBBèCªZ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏÃÕ          	      
+ 	 LMR400_524  : ôTile153 Y   EL_-756.66    √¸™¬k49C∫t› D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿            	      
+ 	 	LMR400_524  : ôTile153 X   EL_-756.66    √¸™¬k49C∫t› D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿            	      
+   LMR400_524  9 òTile152 Y    EL_-1095.44   ƒP”ñC›~∏C∫ ! F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÓff           	      
+ 	 RG6_230     9 òTile152 X    EL_-1095.44   ƒP”ñC›~∏C∫ ! F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÓff           	      
+ 	 RG6_230     8 óTile151 Y    EL_-756.75    ƒÅ∏ D#qâCπâ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33          	      
+ 	 LMR400_524  8 óTile151 X    EL_-756.75    ƒÅ∏ D#qâCπâ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33          	      
+ 	 LMR400_524  ? ûTile158 Y   EL_-899.30    √ô'LC£ÓCªêb C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÁ33          	      
+ 	 !LMR400_400  ? ûTile158 X   EL_-899.30    √ô'LC£ÓCªêb C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÁ33          	      
+   %LMR400_400  > ùTile157 Y    EL_-902.16    √üAC¢ÿCªÉ∂ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A            	      
+ 	 )LMR400_400  > ùTile157 X    EL_-902.16    √üAC¢ÿCªÉ∂ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A            	      
+   -LMR400_400  = úTile156 Y    EL_-902.30    √∑9¸CÄ˝ÙCªúJ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AË            	       
+ 	 1LMR400_400  = úTile156 X    EL_-902.30    √∑9¸CÄ˝ÙCªúJ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AË            	      
+ 	 5LMR400_400  < õTile155 Y   EL_-902.50    √≤ÚCh◊çCª°â C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÈôö          	      
+ 	 9LMR400_400  < õTile155 X   EL_-902.50    √≤ÚCh◊çCª°â C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÈôö          	      
+ 	 =LMR400_400   C §Tile164 Y    EL_-756.51    ƒWÚƒ‚Cª¬— D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ          	      
+ 	 LMR400_524 ! C §Tile164 X    EL_-756.51    ƒWÚƒ‚Cª¬— D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ          	      
+ 	 LMR400_524 " B £Tile163 Y    EL_-757.28    ƒLTº√"èCª‹) D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏÃÕ          	      
+ 	 
+LMR400_524 # B £Tile163 X    EL_-757.28    ƒLTº√"èCª‹) D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏÃÕ          	      
+ 	 LMR400_524 $ A ¢Tile162 Y    EL_-1105.47   √“!h√Â„C∫¿b F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÏÃÕ          	       
+ 	 RG6_230    % A ¢Tile162 X    EL_-1105.47   √“!h√Â„C∫¿b F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÏÃÕ                 
+ 	 RG6_230    & @ °Tile161 Y    EL_-1264.50   √ÃáÆ√Œ:C∫¸ E D D D E F H I J K K K K L M O P R S T T T U VAÌôö          	      
+ 	 RG6_90     ' @ °Tile161 X    EL_-1264.50   √ÃáÆ√Œ:C∫¸ E D D D E F H I J K K K K L M O P R S T T T U VAÌôö          	      
+ 	 RG6_90     ( G ®Tile168 Y    EL_-996.46    √Ä‘{ƒ"èCªü} E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÏÃÕ          	       
+ 	 "LMR400_320 ) G ®Tile168 X    EL_-996.46    √Ä‘{ƒ"èCªü} E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÏÃÕ          	      
+ 	 &LMR400_320 * F ßTile167 Y    EL_-902.26    √)\¨ƒO+CªŒŸ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A‹ÃÕ          	      
+ 	 *LMR400_400 + F ßTile167 X    EL_-902.26    √)\¨ƒO+CªŒŸ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A‹ÃÕ          	      
+ 	 .LMR400_400 , E ¶Tile166 Y    EL_-903.90    √udƒŸÀCª≈¢ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AËÃÕ          	      
+ 	 2LMR400_400 - E ¶Tile166 X    EL_-903.90    √udƒŸÀCª≈¢ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AËÃÕ          	      
+ 	 6LMR400_400 . D •Tile165 Y    EL_-758.63    ƒ∑æƒ(ÅXCª´Ö D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÈôö          	      
+ 	 :LMR400_524 / D •Tile165 X    EL_-758.63    ƒ∑æƒ(ÅXCª´Ö D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÈôö           	      
+ 	 >LMR400_524 0  JTile074 Y   EL_-1101.47   ¬0á√¬uCªØû F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAﬁff          	      
+ 	 RG6_230    1  JTile074 X   EL_-1101.47   ¬0á√¬uCªØû F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAﬁff          	      
+ 	 RG6_230    2 
+ ITile073 Y    EL_-750.15    √D.V√é:CªsT D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÍÃÕ          	      
+ 	 LMR400_524 3 
+ ITile073 X    EL_-750.15    √D.V√é:CªsT D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÍÃÕ          	       
+ 	 LMR400_524 4 	 HTile072 Y   EL_-1088.43   BæLÕ√F1™CºÉ F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` b¿            	      
+   RG6_230    5 	 HTile072 X   EL_-1088.43   BæLÕ√F1™CºÉ F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` b¿             	      
+ 	 RG6_230    6  GTile071 Y    EL_-1089.59   C=ÀÖ√C˙·Cºîú F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÏff          	      
+ 	 RG6_230    7  GTile071 X    EL_-1089.59   C=ÀÖ√C˙·Cºîú F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÏff          	      
+ 	 RG6_230    8  NTile078 Y    EL_-1185.14   CÖ=Ù√∏Õ”Cªû∏ F F F G H J K M N N O O O P Q S T U V W W W W XA…ôö          	      
+ 	 #RG6_150    9  NTile078 X    EL_-1185.14   CÖ=Ù√∏Õ”Cªû∏ F F F G H J K M N N O O O P Q S T U V W W W W XA…ôö          	      
+ 	 'RG6_150    :  MTile077 Y    EL_-1259.13   C7√∂CCªﬁò E D D D E F H I J K K K K L M O P R S T T T U VAÍff           	      
+ 	 +RG6_90     ;  MTile077 X    EL_-1259.13   C7√∂CCªﬁò E D D D E F H I J K K K K L M O P R S T T T U VAÍff          	       
+ 	 /RG6_90     <  LTile076 Y    EL_-1088.69   C9/ﬂ√ÍhìCª`B F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÍ            	      
+ 	 3RG6_230    =  LTile076 X    EL_-1088.69   C9/ﬂ√ÍhìCª`B F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÍ             	      
+ 	 7RG6_230    >  KTile075 Y    EL_-1089.22   ¡~Ìë√‚WœCªé5 F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bA·ôö          	      
+ 	 ;RG6_230    ?  KTile075 X    EL_-1089.22   ¡~Ìë√‚WœCªé5 F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bA·ôö          	      
+ 	 ?RG6_230    @ kÙLBE4    Y    EL_-1124.52   CÃgÆE‚∏Cπ¿  A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 @RFOF-3000  A kÙLBE4    X    EL_-1124.52   CÃgÆE‚∏Cπ¿  A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 DRFOF-3000  B jÛLBE3    Y    EL_-1119.92   DÄL)Ev∏CªBè A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 HRFOF-3000  C jÛLBE3    X    EL_-1119.92   DÄL)Ev∏CªBè A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 LRFOF-3000  D iÚLBE2    Y    EL_-1124.52   Do\D˘O
+C∫Ÿö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 PRFOF-3000  E iÚLBE2    X    EL_-1124.52   Do\D˘O
+C∫Ÿö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 TRFOF-3000  F hÒLBE1    Y    EL_-627.97    DSC3DŒÀ◊C∫) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 XRFOF-3000  G hÒLBE1    X    EL_-627.97    DSC3DŒÀ◊C∫) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 \RFOF-3000  H o¯LBE8    Y    EL_-624.57    DàÈHE=W\C∫ÿR A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 `RFOF-3000  I o¯LBE8    X    EL_-624.57    DàÈHE=W\C∫ÿR A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 dRFOF-3000  J n˜LBE7    Y    EL_-628.32    Aº·HEZ∏C∏¨Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 hRFOF-3000  K n˜LBE7    X    EL_-628.32    Aº·HEZ∏C∏¨Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 lRFOF-3000  L mˆLBE6    Y    EL_-1121.37   D:·E&ÂHCπÂ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 pRFOF-3000  M mˆLBE6    X    EL_-1121.37   D:·E&ÂHCπÂ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+   tRFOF-3000  N lıLBE5    Y    EL_-1126.22   DhÂ√E(©HC∫ùq A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 xRFOF-3000  O lıLBE5    X    EL_-1126.22   DhÂ√E(©HC∫ùq A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 |RFOF-3000  P [‰LBC4    Y   EL_-647.31    E≠öD™
+CæN A @ @ @ A A B C C D D E F G H I J K L M M N O P¿                     
+ 	 ARFOF-3000  Q [‰LBC4    X   EL_-647.31    E≠öD™
+CæN A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	        	 ERFOF-3000  R Z„LBC3    Y    EL_-1147.26   D“˜\D[ÒÏCºC◊ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 IRFOF-3000  S Z„LBC3    X    EL_-1147.26   D“˜\D[ÒÏCºC◊ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 MRFOF-3000  T Y‚LBC2    Y    EL_-1147.26   ETÕDZ‰{CºÜf A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 QRFOF-3000  U Y‚LBC2    X    EL_-1147.26   ETÕDZ‰{CºÜf A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	       
+ 	 URFOF-3000  V X·LBC1    Y    EL_-652.01    D¿ˆCµ˘öCªP§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 YRFOF-3000  W X·LBC1    X    EL_-652.01    D¿ˆCµ˘öCªP§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	       
+ 	 ]RFOF-3000  X _ËLBC8    Y   EL_-1147.26   D≠k3DôfCº:· A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 aRFOF-3000  Y _ËLBC8    X   EL_-1147.26   D≠k3DôfCº:· A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 eRFOF-3000  Z ^ÁLBC7    Y    EL_-651.31    Dª9öDÀË§Cº^∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿              	       
+   iRFOF-3000  [ ^ÁLBC7    X    EL_-651.31    Dª9öDÀË§Cº^∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	         
+ 	 mRFOF-3000  \ ]ÊLBC6    Y   EL_-1147.26   DË˘öD´k◊CΩ|) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 qRFOF-3000  ] ]ÊLBC6    X   EL_-1147.26   DË˘öD´k◊CΩ|) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 uRFOF-3000  ^ \ÂLBC5    Y    EL_-654.06    EïöD“pRCæ~∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	       
+ 	 yRFOF-3000  _ \ÂLBC5    X    EL_-654.06    EïöD“pRCæ~∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	       
+ 	 }RFOF-3000  ` cÏLBD4    Y 	   EL_-834.07    Dﬂ6fEòÕCº¨Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 BRFOF-3000  a cÏLBD4    X 	   EL_-834.07    Dﬂ6fEòÕCº¨Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	      
+ 	 FRFOF-3000  b bÎLBD3    Y 	   EL_-332.57    E
+c◊E §CækÖ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 JRFOF-3000  c bÎLBD3    X 	   EL_-332.57    E
+c◊E §CækÖ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 NRFOF-3000  d aÍLBD2    Y 	   EL_-833.77    D›Ì√E n·CΩJ= A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 RRFOF-3000  e aÍLBD2    X 	   EL_-833.77    D›Ì√E n·CΩJ= A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 VRFOF-3000  f `ÈLBD1    Y 	   EL_-338.97    DõÎÖDÓr·Cª™= A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ZRFOF-3000  g `ÈLBD1    X 	   EL_-338.97    DõÎÖDÓr·Cª™= A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ^RFOF-3000  h gLBD8    Y 	   EL_-834.32    Dµ„ÖE3Ñ{Cº9ö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 bRFOF-3000  i gLBD8    X 	   EL_-834.32    Dµ„ÖE3Ñ{Cº9ö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 fRFOF-3000  j fÔLBD7    Y 	   EL_-339.07    DÕ
+èEB=Cºff A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 jRFOF-3000  k fÔLBD7    X 	   EL_-339.07    DÕ
+èEB=Cºff A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 nRFOF-3000  l eÓLBD6    Y 	  EL_-835.27    DÓ9öE--CΩ7
+ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 rRFOF-3000  m eÓLBD6    X 	  EL_-835.27    DÓ9öE--CΩ7
+ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 vRFOF-3000  n dÌLBD5    Y 	   EL_-834.82    D™¯ˆE§§Cª‘{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 zRFOF-3000  o dÌLBD5    X 	   EL_-834.82    D™¯ˆE§§Cª‘{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ~RFOF-3000  p S‹LBB4    Y    EL_-1722.35   E%DÕ√/
+C∫˙· A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 CRFOF-3000  q S‹LBB4    X    EL_-1722.35   E%DÕ√/
+C∫˙· A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 GRFOF-3000  r R€LBB3    Y    EL_-1222.40   D˛Óf√„ÆCπyö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 KRFOF-3000  s R€LBB3    X    EL_-1222.40   D˛Óf√„ÆCπyö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ORFOF-3000  t Q⁄LBB2    Y    EL_-1722.35   E0ŸÏ√•NC∫Ø\ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 SRFOF-3000  u Q⁄LBB2    X    EL_-1722.35   E0ŸÏ√•NC∫Ø\ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 WRFOF-3000  v PŸLBB1    Y    EL_-1222.40   E 7\ƒOUC∏¬è A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 [RFOF-3000  w PŸLBB1    X    EL_-1222.40   E 7\ƒOUC∏¬è A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 _RFOF-3000  x W‡LBB8    Y   EL_-1222.40   DıHˆC£Ù{Cª0§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 cRFOF-3000  y W‡LBB8    X   EL_-1222.40   DıHˆC£Ù{Cª0§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 gRFOF-3000  z VﬂLBB7    Y    EL_-1227.00   E∏D4{Cº,Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 kRFOF-3000  { VﬂLBB7    X    EL_-1227.00   E∏D4{Cº,Õ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 oRFOF-3000  | UﬁLBB6    Y    EL_-1226.15   E{3DB#3CºŸö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 sRFOF-3000  } UﬁLBB6    X    EL_-1226.15   E{3DB#3CºŸö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 wRFOF-3000  ~ T›LBB5    Y    EL_-1722.35   EÓ·¬R33C∫òR A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 {RFOF-3000   T›LBB5    X    EL_-1722.35   EÓ·¬R33C∫òR A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 RFOF-3000  Ä # |Tile124 Y    EL_-1666.90   DLÓVCc‡≈Cªﬂæ E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÃÕ          	      
+ 	 ÄLMR400_320 Å # |Tile124 X    EL_-1666.90   DLÓVCc‡≈Cªﬂæ E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÃÕ          	      
+ 	 ÑLMR400_320 Ç " {Tile123 Y    EL_-1571.79   D@oCnO\CªÁ
+ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AŸôö          	      
+ 	 àLMR400_400 É " {Tile123 X    EL_-1571.79   D@oCnO\CªÁ
+ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AŸôö          	      
+ 	 åLMR400_400 Ñ ! zTile122 Y    EL_-1427.64   DêˆCêsCªë' D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 êLMR400_524 Ö ! zTile122 X    EL_-1427.64   DêˆCêsCªë' D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 îLMR400_524 Ü   yTile121 Y    EL_-1428.80   DØ®RD3'CªM D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 òLMR400_524 á   yTile121 X    EL_-1428.80   DØ®RD3'CªM D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff           	      
+ 	 úLMR400_524 à ' ÄTile128 Y    EL_-1427.20   D∞ãÖ?ÅÎÖC∫◊L D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA€33          	      
+ 	 †LMR400_524 â ' ÄTile128 X    EL_-1427.20   D∞ãÖ?ÅÎÖC∫◊L D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA€33          	      
+ 	 §LMR400_524 ä & Tile127 Y    EL_-1571.45   Dmè}BÂ`Cº#3 C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^Aﬁff          	      
+ 	 ®LMR400_400 ã & Tile127 X    EL_-1571.45   Dmè}BÂ`Cº#3 C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^Aﬁff          	      
+ 	 ¨LMR400_400 å % ~Tile126 Y   EL_-1427.54   DJ°Ï¬k~˙Cªï√ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿             	      
+ 	 ∞LMR400_524 ç % ~Tile126 X   EL_-1427.54   DJ°Ï¬k~˙Cªï√ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿            	      
+ 	 ¥LMR400_524 é $ }Tile125 Y    EL_-1428.50   DK–RBu≈¢Cº ! D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏ            	      
+ 	 ∏LMR400_524 è $ }Tile125 X    EL_-1428.50   DK–RBu≈¢Cº ! D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÏ            	      
+ 	 ºLMR400_524 ê  rTile114 Y    EL_-1578.37   D_ R√Äy€C∫æ˙ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A€33          	      
+ 	 ÅLMR400_400 ë  rTile114 X    EL_-1578.37   D_ R√Äy€C∫æ˙ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A€33          	       
+ 	 ÖLMR400_400 í  qTile113 Y   EL_-1431.31   DCh’√-∑çCª« D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿            	       
+ 	 âLMR400_524 ì  qTile113 X   EL_-1431.31   DCh’√-∑çCª« D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c d¿             	      
+ 	 çLMR400_524 î  pTile112 Y    EL_-1578.02   D`àB√c&®C∫ÿ’ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÓff          	      
+ 	 ëLMR400_400 ï  pTile112 X    EL_-1578.02   D`àB√c&®C∫ÿ’ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÓff          	      
+ 	 ïLMR400_400 ñ  oTile111 Y    EL_-1432.38   Dœó\√¶·Cπà¥ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 ôLMR400_524 ó  oTile111 X    EL_-1432.38   Dœó\√¶·Cπà¥ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff           	       
+ 	 ùLMR400_524 ò  vTile118 Y    EL_-1432.45   Dà{ƒ^^%Cπ0≈ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÈ˝Ù          	      
+ 	 °LMR400_524 ô  vTile118 X    EL_-1432.45   Dà{ƒ^^%Cπ0≈ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÈ˝Ù          	      
+ 	 •LMR400_524 ö  uTile117 Y    EL_-1433.20   D0›√ñYC∫¡À D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33          	      
+ 	 ©LMR400_524 õ  uTile117 X    EL_-1433.20   D0›√ñYC∫¡À D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAﬂ33          	      
+ 	 ≠LMR400_524 ú  tTile116 Y    EL_-1432.64   D6Ì`√y•¢C∫Ê D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÎ33          	       
+ 	 ±LMR400_524 ù  tTile116 X    EL_-1432.64   D6Ì`√y•¢C∫Ê D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÎ33          	      
+ 	 µLMR400_524 û  sTile115 Y    EL_-1432.44   D>π'√CúCªÁ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÌôö          	      
+ 	 πLMR400_524 ü  sTile115 X    EL_-1432.44   D>π'√CúCªÁ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÌôö          	      
+ 	 ΩLMR400_524 † 3 êTile144 Y    EL_-1431.10   ¬CŒŸCñò¥CªO D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ          	      
+ 	 ÇLMR400_524 ° 3 êTile144 X    EL_-1431.10   ¬CŒŸCñò¥CªO D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA‹ÃÕ          	       
+ 	 ÜLMR400_524 ¢ 2 èTile143 Y    EL_-1671.08   √ÑLC˘PÉC∫ú) E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÈôö          	       
+ 	 äLMR400_320 £ 2 èTile143 X    EL_-1671.08   √ÑLC˘PÉC∫ú) E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÈôö          	      
+ 	 éLMR400_320 § 1 éTile142 Y    EL_-1431.77   √›† Dñ$)C∏)¸ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAŸôö                 
+ 	 íLMR400_524 • 1 éTile142 X    EL_-1431.77   √›† Dñ$)C∏)¸ D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAŸôö          	      
+ 	 ñLMR400_524 ¶ 0 çTile141 Y    EL_-1432.15   C¬èDâûC∏àR D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÚff          	      
+ 	 öLMR400_524 ß 0 çTile141 X    EL_-1432.15   C¬èDâûC∏àR D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÚff          	      
+   ûLMR400_524 ® 7 îTile148 Y    EL_-1576.23   Bñ¸ÓDÓáC∫Nw C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÎ33          	      
+ 	 ¢LMR400_400 © 7 îTile148 X    EL_-1576.23   Bñ¸ÓDÓáC∫Nw C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÎ33          	       
+ 	 ¶LMR400_400 ™ 6 ìTile147 Y   EL_-1576.24   ¿M“ÚC˝eÅC∫f… C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÃÕ          	      
+ 	 ™LMR400_400 ´ 6 ìTile147 X   EL_-1576.24   ¿M“ÚC˝eÅC∫f… C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÃÕ          	      
+ 	 ÆLMR400_400 ¨ 5 íTile146 Y    EL_-1671.98   ¬∂M”DºC∫g E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÔ33          	      
+ 	 ≤LMR400_320 ≠ 5 íTile146 X    EL_-1671.98   ¬∂M”DºC∫g E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÔ33          	      
+ 	 ∂LMR400_320 Æ 4 ëTile145 Y    EL_-1431.82   ¬®ˆCπRÚCª+Ö D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÎ33                 
+ 	 ∫LMR400_524 Ø 4 ëTile145 X    EL_-1431.82   ¬®ˆCπRÚCª+Ö D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÎ33          	      
+ 	 æLMR400_524 ∞ + ÜTile134 Y    EL_-1590.34   Ct|)DœC∫$Z C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÔ33          	      
+ 	 ÉLMR400_400 ± + ÜTile134 X    EL_-1590.34   Ct|)DœC∫$Z C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÔ33          	      
+ 	 áLMR400_400 ≤ * ÖTile133 Y    EL_-1444.92   D
+WœD§3ÖCπ-P D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 ãLMR400_524 ≥ * ÖTile133 X    EL_-1444.92   D
+WœD§3ÖCπ-P D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÓff          	      
+ 	 èLMR400_524 ¥ ) ÑTile132 Y    EL_-1444.35   DV®sDì)HC∫û D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA„33          	      
+ 	 ìLMR400_524 µ ) ÑTile132 X    EL_-1444.35   DV®sDì)HC∫û D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dA„33          	      
+ 	 óLMR400_524 ∂ ( ÉTile131 Y    EL_-1445.70   DwéáDQ¸ZC∫Y D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAœ33          	      
+ 	 õLMR400_524 ∑ ( ÉTile131 X    EL_-1445.70   DwéáDQ¸ZC∫Y D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAœ33          	      
+ 	 üLMR400_524 ∏ / äTile138 Y    EL_-1444.37   D#7LCæà’Cª ! D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÃÕ          	      
+ 	 £LMR400_524 π / äTile138 X    EL_-1444.37   D#7LCæà’Cª ! D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÃÕ          	       
+ 	 ßLMR400_524 ∫ . âTile137 Y    EL_-1683.98   DÃjD&FC∫d˛ E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÌôö          	      
+ 	 ´LMR400_320 ª . âTile137 X    EL_-1683.98   DÃjD&FC∫d˛ E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÌôö          	      
+ 	 ØLMR400_320 º - àTile136 Y    EL_-1590.49   C‘}qCÙm≤C∫{« C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A‹            	       
+ 	 ≥LMR400_400 Ω - àTile136 X    EL_-1590.49   C‘}qCÙm≤C∫{« C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^A‹            	      
+ 	 ∑LMR400_400 æ , áTile135 Y    EL_-1683.69   C≥ö·D‚†C∫A' E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÎ33          	      
+ 	 ªLMR400_320 ø , áTile135 X    EL_-1683.69   C≥ö·D‚†C∫A' E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÎ33          	      
+ 	 øLMR400_320 ¿ s¸LBF4    Y    EL_-1374.69   √Ô*=D—®§C∑S3 A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ¿RFOF-3000  ¡ s¸LBF4    X    EL_-1374.69   √Ô*=D—®§C∑S3 A @ @ @ A A B C C D D E F G H I J K L M M N O P¿                   
+ 	 ƒRFOF-3000  ¬ r˚LBF3    Y    EL_-1369.19   ƒ,Ô\Dì=qC∏'Æ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 »RFOF-3000  √ r˚LBF3    X    EL_-1369.19   ƒ,Ô\Dì=qC∏'Æ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÃRFOF-3000  ƒ q˙LBF2    Y    EL_-877.04    C3áÆD∑¯ˆC∏û∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 –RFOF-3000  ≈ q˙LBF2    X    EL_-877.04    C3áÆD∑¯ˆC∏û∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ‘RFOF-3000  ∆ p˘LBF1    Y    EL_-879.49    ƒK6fDH¿§CπÖ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	      
+ 	 ÿRFOF-3000  « p˘LBF1    X    EL_-879.49    ƒK6fDH¿§CπÖ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ‹RFOF-3000  » w LBF8    Y    EL_-876.34    ƒk'
+D¯ÈÏC∂ì3 A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ‡RFOF-3000  … w LBF8    X    EL_-876.34    ƒk'
+D¯ÈÏC∂ì3 A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ‰RFOF-3000    vˇLBF7    Y    EL_-876.34    √{¿ E◊ÆC∑˘ö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ËRFOF-3000  À vˇLBF7    X    EL_-876.34    √{¿ E◊ÆC∑˘ö A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÏRFOF-3000  Ã u˛LBF6    Y   EL_-1371.09   ¬’QÏDÎ(§C∏!H A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 RFOF-3000  Õ u˛LBF6    X   EL_-1371.09   ¬’QÏDÎ(§C∏!H A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÙRFOF-3000  Œ t˝LBF5    Y    EL_-1374.69   ƒiHD¬Ï)C∑¥{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ¯RFOF-3000  œ t˝LBF5    X    EL_-1374.69   ƒiHD¬Ï)C∑¥{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ¸RFOF-3000  – {LBG4    Y    EL_-1363.96   ƒ∞◊DIs◊C∑§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ¡RFOF-3000  — {LBG4    X    EL_-1363.96   ƒ∞◊DIs◊C∑§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ≈RFOF-3000  “ zLBG3    Y    EL_-865.41    ≈HC©>∏C∂˛∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 …RFOF-3000  ” zLBG3    X    EL_-865.41    ≈HC©>∏C∂˛∏ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÕRFOF-3000  ‘ yLBG2    Y    EL_-1361.01   ƒπﬂ\CˇßÆC∏`  A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 —RFOF-3000  ’ yLBG2    X    EL_-1361.01   ƒπﬂ\CˇßÆC∏`  A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ’RFOF-3000  ÷ xLBG1    Y    EL_-868.01    ƒw‰{C%¬èCπ&f A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ŸRFOF-3000  ◊ xLBG1    X    EL_-868.01    ƒw‰{C%¬èCπ&f A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ›RFOF-3000  ÿ LBG8    Y    EL_-866.31    ƒ©xˆD–	HC∂§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ·RFOF-3000  Ÿ LBG8    X    EL_-866.31    ƒ©xˆD–	HC∂§ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÂRFOF-3000  ⁄ ~LBG7    Y    EL_-864.96    ƒÈiHDß
+·C∑√ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÈRFOF-3000  € ~LBG7    X    EL_-864.96    ƒÈiHDß
+·C∑√ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÌRFOF-3000  ‹ }LBG6    Y    EL_-1360.41   ƒˆ˚◊Dhˇ\C∂±Ï A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÒRFOF-3000  › }LBG6    X    EL_-1360.41   ƒˆ˚◊Dhˇ\C∂±Ï A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ıRFOF-3000  ﬁ |LBG5    Y    EL_-1365.16   ƒél{Dä7
+CπE A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ˘RFOF-3000  ﬂ |LBG5    X    EL_-1365.16   ƒél{Dä7
+CπE A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ˝RFOF-3000  ‡ K‘LBA4    Y    EL_-993.83    √BQÏƒ∏%qCº) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ¬RFOF-3000  · K‘LBA4    X    EL_-993.83    √BQÏƒ∏%qCº) A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	       
+ 	 ∆RFOF-3000  ‚ J”LBA3    Y    EL_-994.63    ¬ÄÖƒ»∏Cª≈ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	  RFOF-3000  „ J”LBA3    X    EL_-994.63    ¬ÄÖƒ»∏Cª≈ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	      
+ 	 ŒRFOF-3000  ‰ I“LBA2    Y    EL_-496.78    BV\)ƒ›D{Cª8R A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 “RFOF-3000  Â I“LBA2    X    EL_-496.78    BV\)ƒ›D{Cª8R A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÷RFOF-3000  Ê H—LBA1    Y    EL_-497.68    CNŸöƒ˘˘ÏC∫u√ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ⁄RFOF-3000  Á H—LBA1    X    EL_-497.68    CNŸöƒ˘˘ÏC∫u√ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ﬁRFOF-3000  Ë OÿLBA8    Y    EL_-498.18    ƒBÓ∏ƒ^RèCª4{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ‚RFOF-3000  È OÿLBA8    X    EL_-498.18    ƒBÓ∏ƒ^RèCª4{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÊRFOF-3000  Í N◊LBA7    Y    EL_-992.63    ƒ.™=ƒâü
+Cª\ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÍRFOF-3000  Î N◊LBA7    X    EL_-992.63    ƒ.™=ƒâü
+Cª\ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÓRFOF-3000  Ï M÷LBA6    Y    EL_-991.73    ƒo\ƒíùqCªbè A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ÚRFOF-3000  Ì M÷LBA6    X    EL_-991.73    ƒo\ƒíùqCªbè A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ˆRFOF-3000  Ó L’LBA5    Y   EL_-992.63    √‚”3ƒ™Ë§Cªt{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿             	      
+ 	 ˙RFOF-3000  Ô L’LBA5    X   EL_-992.63    √‚”3ƒ™Ë§Cªt{ A @ @ @ A A B C C D D E F G H I J K L M M N O P¿            	      
+ 	 ˛RFOF-3000    6Tile054 Y    EL_-13.07     ¬°!HB∑û5Cª·H E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÈôö          	       
+ 	 √LMR400_320 Ò  6Tile054 X    EL_-13.07     ¬°!HB∑û5Cª·H E F H I K L N O O P Q R T U W Y Z Z [ [ \ ^ _ aAÈôö           	      
+ 	 «LMR400_320 Ú  5Tile053 Y    EL_-282.25    Böè¡≠ÆCº,Ó E D D D E F H I J K K K K L M O P R S T T T U VAÏ            	      
+ 	 ÀRG6_90     Û  5Tile053 X    EL_-282.25    Böè¡≠ÆCº,Ó E D D D E F H I J K K K K L M O P R S T T T U VAÏ             	      
+ 	 œRG6_90     Ù  4Tile052 Y    EL_80.50      ¬-ÇC1wçCªÄ§ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÚff           	      
+ 	 ”LMR400_400 ı  4Tile052 X    EL_80.50      ¬-ÇC1wçCªÄ§ C D D E F G I J K L M N P Q S T V W X Y Z [ ] ^AÚff          	      
+ 	 ◊LMR400_400 ˆ   3Tile051 Y    EL_-282.15    B˘ö¬^=qCºf… E D D D E F H I J K K K K L M O P R S T T T U VAÈôö                 
+ 	 €RG6_90     ˜   3Tile051 X    EL_-282.15    B˘ö¬^=qCºf… E D D D E F H I J K K K K L M O P R S T T T U VAÈôö           	      
+ 	 ﬂRG6_90     ¯  :Tile058 Y    EL_-282.24    B˙d›¬Ø1CºÉ¯ E D D D E F H I J K K K K L M O P R S T T T U VA‡ÃÕ           	      
+ 	 „RG6_90     ˘  :Tile058 X    EL_-282.24    B˙d›¬Ø1CºÉ¯ E D D D E F H I J K K K K L M O P R S T T T U VA‡ÃÕ          	      
+ 	 ÁRG6_90     ˙  9Tile057 Y    EL_-112.70    ¬}Ù¬ÏÚCºÈ F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÃÕ          	      
+ 	 ÎRG6_230    ˚  9Tile057 X    EL_-112.70    ¬}Ù¬ÏÚCºÈ F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÃÕ           	      
+ 	 ÔRG6_230    ¸  8Tile056 Y   EL_-112.95    ¡≤„T¬á)¸Cºf F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÒôö          	      
+   ÛRG6_230    ˝  8Tile056 X   EL_-112.95    ¡≤„T¬á)¸Cºf F G H I K L N O P Q R S T U W Y Z \ \ ] ^ _ ` bAÒôö          	      
+ 	 ˜RG6_230    ˛  7Tile055 Y    EL_225.60     √ÅˆÈC≥3Cº<Ó D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÍff          	       
+ 	 ˚LMR400_524 ˇ  7Tile055 X    EL_225.60     √ÅˆÈC≥3Cº<Ó D E F G H I J L M N P Q S U V X Z [ ] ^ ` a c dAÍff          	       
+ 	 ˇLMR400_524                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
