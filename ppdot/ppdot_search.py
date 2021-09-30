@@ -108,18 +108,16 @@ if __name__ == '__main__':
     # Get the list of obsids and frequencies from processing_meta_info.txt
     freqs_MHz = get_metainfo("../dedispersed_profiles/processing_meta_info.txt")
 
-    # Get all the DM=56.0 profiles
+    # Get all the profiles
     fluxes = {}
     t_axes = {}
     for obsid in freqs_MHz:
         fluxes[obsid], t_axes[obsid] = get_profile(obsid, 57.0)
 
-    # Apply the DM corrections (but this time for DM = 56.5)
-    #apply_dm_corrections(t_axes, 56.5, freqs_MHz, 185.6)
-
-    # Load and apply the BC corrections
-    #bc_corrections = get_bc_corrections("bc_corrections.dat")
-    #apply_bc_corrections(bc_corrections, t_axes)
+    # Apply a weighting due to spectral index
+    ref_freq = 154 # MHz
+    spec_idx = -1.16
+    weighted_fluxes = {obsid:fluxes[obsid]*(ref_freq/freqs_MHz[obsid])**spec_idx for obsid in freqs_MHz}
 
     # Calculate S/N in P-Pdot parameter space
     P0    = 1091.1558
@@ -142,7 +140,7 @@ if __name__ == '__main__':
         for j in range(len(Pdots)):
             Pdot = Pdots[j]
             phases = convert_to_phases(t_axes, P, Pdot=Pdot)
-            SNRs[i,j], mean_profile = get_mean_peak(phases, fluxes, dt=4.5822e-4)
+            SNRs[i,j], mean_profile = get_mean_peak(phases, weighted_fluxes, dt=4.5822e-4)
             #print("  SNR = {}".format(SNRs[i,j]))
 
             if SNRs[i,j] > maxSNR:
