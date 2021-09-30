@@ -36,6 +36,7 @@ plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica"]})
 
+# This is the best value of the period for Pdot = 0, which results in a stack that lines up good enough for the figure
 P = 1091.1708 # s
 # Obsids where you can't really see the pulse in the stack
 excludes = [1205955280, 1205955160, 1204998416, 1204837904, 1204831488, 1204225936, 1204225816]
