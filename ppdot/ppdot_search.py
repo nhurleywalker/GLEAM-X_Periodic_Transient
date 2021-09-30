@@ -153,12 +153,12 @@ if __name__ == '__main__':
 
     header = "Created with\n"
     header += " ".join(sys.argv)
-    header += "Best (P, Pdot) = ({}, {})".format(best_P, best_Pdot)
+    header += "\nBest (P, Pdot) = ({}, {})\n".format(best_P, best_Pdot)
 
     np.savetxt("p-pdot_search_best_profile.dat", best_profile, header=header)
 
-    header += "Rows = periods (P_start = {}, P_step = {}, Num_Ps = {})".format(P0, Pstep, len(Ps))
-    header += "Cols = Pdots (Pd_start = {}, Pd_step = {}, Num_Pds = {})".format(Pdot0, Pdotstep, len(Pdots))
+    header += "Rows = periods (P_start = {}, P_step = {}, Num_Ps = {})\n".format(P0, Pstep, len(Ps))
+    header += "Cols = Pdots (Pd_start = {}, Pd_step = {}, Num_Pds = {})\n".format(Pdot0, Pdotstep, len(Pdots))
 
     np.savetxt("p-pdot_search.dat", SNRs, header=header)
 
