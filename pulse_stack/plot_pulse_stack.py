@@ -40,6 +40,8 @@ plt.rcParams.update({
 P = 1091.1708 # s
 # Obsids where you can't really see the pulse in the stack
 excludes = [1205955280, 1205955160, 1204998416, 1204837904, 1204831488, 1204225936, 1204225816]
+# Obsids we won't include in the Unknown Pleasures plot
+truncs = [1199053856, 1199677168, 1203887584, 1204224736, 1204225816, 1204232360, 1204233560, 1204834664, 1205259184]
 
 metas = sorted(glob("../metafits/*.metafits"), reverse=False)
 
@@ -54,6 +56,7 @@ ax = None
 month = None
 j = 0
 m = 0
+pretty_plot = np.random.normal(size = (64,200))
 for i in np.arange(0, len(metas)):
     meta = metas[i]
     obsid = os.path.basename(meta)[0:10]
@@ -79,8 +82,9 @@ for i in np.arange(0, len(metas)):
     else:
         ax = plt.subplot(gs[m, j])
     x = np.mod(dat[0] + float(obsid) + P/2, P) - 0.48*P
-    ind = np.where(x!=0)
-    line1, = ax.plot(x[ind], dat[1][ind], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
+#    ind = np.where(x!=0)
+    line1, = ax.plot(x, dat[1], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
+#    line1, = ax.plot(x[ind], dat[1][ind], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
     ax.axes.get_xaxis().set_visible(False)
 #    ax.set_frame_on(False)
     ax.set_yticks([])
@@ -103,7 +107,7 @@ for i in np.arange(0, len(metas)):
     ax.spines["left"].set_visible(False)
     ax.spines["bottom"].set_visible(False)
     # Reduce padding
-    ax.margins(0.0)
+    ax.margins(0.05)
     # Sans-serif fonts for Nature
     ax.xaxis.get_major_formatter()._usetex = False
     ax.yaxis.get_major_formatter()._usetex = False
@@ -113,6 +117,16 @@ for i in np.arange(0, len(metas)):
         ax.spines["bottom"].set_visible(True)
         ax.axes.get_xaxis().set_visible(True)
         ax.set_xlabel("Time / seconds")
+
+    print(len(x))
+    z = int(x+100)
+    startz = np.where(z==0)
+    print(startz)
+    pretty_plot[i] = 25*dat[1][startz:200]
+#        np.savetxt(f, 25*dat[1][z]/np.nanmax(dat[1][z]), newline=",")
+#        f.write("\n")
+
+np.savetxt("ulpm.csv", pretty_plot)
 
 plt.subplots_adjust(hspace=.0)
 fig.savefig("pulse_stack.pdf", bbox_inches="tight")
