@@ -66,6 +66,7 @@ if __name__ == "__main__":
     miniax = fig.add_subplot(445, sharex=axs[0][1])
     miniax.set_ylabel("Frequency (MHz)")
     miniax.set_ylim([-3, 28])
+    miniax.yaxis.get_major_formatter()._usetex = False
     # Only this axis; https://stackoverflow.com/questions/4209467/matplotlib-share-x-axis-but-dont-show-x-axis-tick-labels-for-both-just-one
     plt.setp(miniax.get_xticklabels(), visible=False)
     miniax.plot(t, profile, color="black", lw=0.5)
