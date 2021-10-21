@@ -27,6 +27,13 @@ def wordMonth(intMonth):
         cmonth = None
     return cmonth
 
+def rms_clip(arr):
+    ind = np.arange(0, len(arr))
+    for i in range(0,4):
+        rms = np.nanstd(arr[ind])
+        ind = np.where(arr < 2*rms)
+    return rms
+
 # I want to try red to blue for the frequencies
 cm1 = mcol.LinearSegmentedColormap.from_list("MyCmapName",["c","m"])
 
@@ -56,7 +63,6 @@ ax = None
 month = None
 j = 0
 m = 0
-pretty_plot = np.random.normal(size = (64,200))
 for i in np.arange(0, len(metas)):
     meta = metas[i]
     obsid = os.path.basename(meta)[0:10]
@@ -82,9 +88,7 @@ for i in np.arange(0, len(metas)):
     else:
         ax = plt.subplot(gs[m, j])
     x = np.mod(dat[0] + float(obsid) + P/2, P) - 0.48*P
-#    ind = np.where(x!=0)
     line1, = ax.plot(x, dat[1], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
-#    line1, = ax.plot(x[ind], dat[1][ind], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
     ax.axes.get_xaxis().set_visible(False)
 #    ax.set_frame_on(False)
     ax.set_yticks([])
@@ -118,15 +122,22 @@ for i in np.arange(0, len(metas)):
         ax.axes.get_xaxis().set_visible(True)
         ax.set_xlabel("Time / seconds")
 
-    print(len(x))
-    z = int(x+100)
-    startz = np.where(z==0)
-    print(startz)
-    pretty_plot[i] = 25*dat[1][startz:200]
-#        np.savetxt(f, 25*dat[1][z]/np.nanmax(dat[1][z]), newline=",")
-#        f.write("\n")
+    rms = rms_clip(dat[1])
+    if rms < 3.0:
+        rms = 0.4
+        r = np.random.normal(loc=0, scale=rms, size=200)
+        zrange = np.array(2*(x+50), dtype="int")
+        offset = zrange[0]
+        for z in zrange:
+            if z>=30 and z<170 and z-offset<len(dat[1]) and z-offset>0:
+                if np.logical_not(np.isnan(dat[1][z-offset])) and dat[1][z-offset] != 0.0:
+                    r[z] = dat[1][z-offset]
+        with open("ulpm.csv", "a") as f:
+            np.savetxt(f, r, newline=",")
+            #np.savetxt(f, 25*r/np.nanmax(r), newline=",")
+            f.write("\n")
 
-np.savetxt("ulpm.csv", pretty_plot)
+#np.savetxt("ulpm.csv", pretty_plot)
 
 plt.subplots_adjust(hspace=.0)
 fig.savefig("pulse_stack.pdf", bbox_inches="tight")
