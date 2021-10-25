@@ -7,7 +7,10 @@ from matplotlib import rc
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "sans-serif",
+    "font.size": 5,
     "font.sans-serif": ["Helvetica"]})
+
+cm = 1/2.54  # centimeters in inches
 
 try:
     obsid = sys.argv[1]
@@ -36,13 +39,14 @@ def get_dat_filename(obsid, stokes):
 def plot_dynspec(obsid, stokes, ax):
     filename = get_dat_filename(obsid, stokes)
     dat = np.loadtxt(filename).T
+#    print(np.nanstd(dat))
     t = np.arange(dat.shape[1])*dt - t0
     extent = np.array([t[0] - 0.5*dt, t[-1] + 0.5*dt, freq_lo, freq_lo + BW])
     image = ax.imshow(dat, cmap="plasma", origin='lower', interpolation='none', aspect='auto', extent=extent, vmin=vmin, vmax=vmax)
     return image, dat, t
 
 if __name__ == "__main__":
-    fig, axs = plt.subplots(nrows=2, ncols=nstokes, sharex=True)
+    fig, axs = plt.subplots(figsize=(8.9*cm, 5.3*cm), nrows=2, ncols=nstokes, sharex=True)
     for i in range(nstokes):
         print(i)
         ax = axs[-1][i]
@@ -50,7 +54,8 @@ if __name__ == "__main__":
         image, dat, t = plot_dynspec(obsid, S, ax)
         ax.set_xlim([xmin, xmax])
         ax.set_xlabel("Time (s)")
-        ax.text(xmin+4, 198., S, backgroundcolor="white")
+        ax.text(xmin+4, 197., S, bbox=dict(boxstyle='square,pad=0.4', fc='white', ec='none'))
+#        ax.text(xmin+4, 198., S, backgroundcolor="white")
             # Sans-serif fonts for Nature
         ax.xaxis.get_major_formatter()._usetex = False
         ax.yaxis.get_major_formatter()._usetex = False
@@ -62,6 +67,10 @@ if __name__ == "__main__":
         if i == 0:
             profile = np.nanmean(dat, axis=0)
             ax.set_ylabel("Frequency (MHz)")
+        elif i ==3:
+            vprofile = np.nanmean(dat, axis=0)
+            print(len(vprofile))
+            print(np.nanstd(vprofile))
         fig.delaxes(axs[0][i])
     miniax = fig.add_subplot(445, sharex=axs[0][1])
     miniax.set_ylabel("Frequency (MHz)")
