@@ -18,6 +18,7 @@ from matplotlib import rc
 plt.rcParams.update({
     "text.usetex": False,
     "font.family": "sans-serif",
+    "font.size": 7,
     "font.sans-serif": ["Helvetica"]})
 
 from astropy.time import Time
@@ -25,6 +26,8 @@ from astropy.time import Time
 import matplotlib.patches as mpatches
 from matplotlib import markers
 from matplotlib.path import Path
+
+cm = 1/2.54  # centimeters in inches
 
 # https://stackoverflow.com/questions/26686722/align-matplotlib-scatter-marker-left-and-or-right
 # To align the limits with their real values
@@ -123,7 +126,7 @@ to_remove = [1199510192, 1204225816, 1204225936, 1204831488, 1204837904, 1205955
 for f in to_remove:
     files.remove("../dedispersed_profiles/{0}_I_57.0_flagged_profile.dat".format(f))
 
-fig = plt.figure(figsize=(9,4))
+fig = plt.figure(figsize=(18.3*cm,7*cm))
 ax = fig.add_subplot(211)
 ax2 = fig.add_subplot(212)
 peaks = []
@@ -192,22 +195,22 @@ trunc_times = np.array(trunc_times)
 trunc_peaks = np.array(trunc_peaks)
 trunc_fluences = np.array(trunc_fluences)
 
-ax.scatter((times-trunc_times[0])/(24.*3600.), peaks, color="blue", marker=".", label="detections")
-ax.scatter((trunc_times-trunc_times[0])/(24.*3600.), trunc_peaks, color="purple", marker=align_marker(r"$\uparrow$", valign="bottom"), label="truncated detections", s=75)
-ax.scatter((limits[0]-trunc_times[0])/(24.*3600), limits[1], color="red", marker=align_marker(r"$\downarrow$", valign="top"), label="limits", s=75)
+ax.scatter((times-trunc_times[0])/(24.*3600.), peaks, color="blue", marker=".", label="Detections", s=20)
+ax.scatter((trunc_times-trunc_times[0])/(24.*3600.), trunc_peaks, color="purple", marker=align_marker(r"$\uparrow$", valign="bottom"), label="Truncated detections", s=20)
+ax.scatter((limits[0]-trunc_times[0])/(24.*3600), limits[1], color="red", marker=align_marker(r"$\downarrow$", valign="top"), label="Non-detections", s=20)
 
-ax2.scatter((times-trunc_times[0])/(24.*3600.), fluences, color="blue", marker=".", label="detections")
-ax2.scatter((trunc_times-trunc_times[0])/(24.*3600.), trunc_fluences, color="purple", marker=align_marker(r"$\uparrow$", valign="bottom"), label="truncated detections", s=75)
-ax2.scatter((limits[0]-trunc_times[0])/(24.*3600), limits[1], marker=align_marker(r"$\downarrow$", valign="top"), color="red", label="limits", s=75)
+ax2.scatter((times-trunc_times[0])/(24.*3600.), fluences, color="blue", marker=".", label="detections", s=20)
+ax2.scatter((trunc_times-trunc_times[0])/(24.*3600.), trunc_fluences, color="purple", marker=align_marker(r"$\uparrow$", valign="bottom"), label="truncated detections", s=20)
+ax2.scatter((limits[0]-trunc_times[0])/(24.*3600), limits[1], marker=align_marker(r"$\downarrow$", valign="top"), color="red", label="limits", s=20)
 
 before_gap = np.where(times < 1203374696)
 after_gap = np.where(times > 1203374696)
 
-ax.plot((np.array(times[before_gap])-trunc_times[0])/(24.*3600.), peaks[before_gap], color="blue", lw=1)
-ax.plot((np.array(times[after_gap])-trunc_times[0])/(24.*3600.), peaks[after_gap], color="blue", lw=1)
+ax.plot((np.array(times[before_gap])-trunc_times[0])/(24.*3600.), peaks[before_gap], color="blue", lw=0.5)
+ax.plot((np.array(times[after_gap])-trunc_times[0])/(24.*3600.), peaks[after_gap], color="blue", lw=0.5)
 
-ax2.plot((np.array(times[before_gap])-trunc_times[0])/(24.*3600.), fluences[before_gap], color="blue", lw=1)
-ax2.plot((np.array(times[after_gap])-trunc_times[0])/(24.*3600.), fluences[after_gap], color="blue", lw=1)
+ax2.plot((np.array(times[before_gap])-trunc_times[0])/(24.*3600.), fluences[before_gap], color="blue", lw=0.5)
+ax2.plot((np.array(times[after_gap])-trunc_times[0])/(24.*3600.), fluences[after_gap], color="blue", lw=0.5)
 
 # Remove unnecessary labels from top axis, and put ticks inside so we can see them
 ax.set_xticks([])
@@ -217,11 +220,11 @@ ax_dup.tick_params(axis="x", direction="in")
 ax_dup.set_xticklabels([])
 plt.subplots_adjust(hspace=0.0)
 
-ax.legend()
-ax.axhline(0, alpha=1.0, color="black", lw=1, ls=":")
+ax.legend(loc=2, frameon=False, handletextpad=0.1, borderaxespad=0.1, borderpad=0.2)
+ax.axhline(0, alpha=1.0, color="black", lw=0.5, ls=":")
 ax.set_ylabel("Flux density (Jy)")
 
-ax2.axhline(0, alpha=1.0, color="black", lw=1, ls=":")
+ax2.axhline(0, alpha=1.0, color="black", lw=0.5, ls=":")
 ax2.set_ylabel("Fluence (Jy s)")
 t = Time(int(trunc_times[0]), format="gps")
 t.format = "ymdhms"
