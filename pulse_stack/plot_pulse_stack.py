@@ -16,6 +16,8 @@ from matplotlib import gridspec
 import matplotlib.colors as mcol
 import matplotlib.cm as cm
 
+cm = 1/2.54  # centimeters in inches
+
 def wordMonth(intMonth):
     if intMonth == 3:
         cmonth = "Mar"
@@ -41,6 +43,7 @@ cm1 = mcol.LinearSegmentedColormap.from_list("MyCmapName",["c","m"])
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "sans-serif",
+    "font.size": 7,
     "font.sans-serif": ["Helvetica"]})
 
 # This is the best value of the period for Pdot = 0, which results in a stack that lines up good enough for the figure
@@ -56,7 +59,7 @@ for ex in excludes:
     print(f"Excluding {ex}")
     metas.remove(f"../metafits/{ex}.metafits")
 
-fig = plt.figure(figsize=(5,10))
+fig = plt.figure(figsize=(8.9*cm,17.8*cm))
 # One for each of the profiles
 gs = gridspec.GridSpec(int(len(metas)/2), 2)
 ax = None
@@ -88,7 +91,7 @@ for i in np.arange(0, len(metas)):
     else:
         ax = plt.subplot(gs[m, j])
     x = np.mod(dat[0] + float(obsid) + P/2, P) - 0.48*P
-    line1, = ax.plot(x, dat[1], lw=1, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
+    line1, = ax.plot(x, dat[1], lw=0.5, color=cm1((freqcent - 88.)/(215.-88.)), zorder=1)
     ax.axes.get_xaxis().set_visible(False)
 #    ax.set_frame_on(False)
     ax.set_yticks([])
@@ -140,5 +143,5 @@ for i in np.arange(0, len(metas)):
 #np.savetxt("ulpm.csv", pretty_plot)
 
 plt.subplots_adjust(hspace=.0)
-fig.savefig("pulse_stack.pdf", bbox_inches="tight")
+fig.savefig("pulse_stack.pdf", bbox_inches="tight", )
 fig.savefig("pulse_stack.png", bbox_inches="tight", dpi=300)
