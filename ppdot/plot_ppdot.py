@@ -1,6 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import ndimage
+from matplotlib.ticker import ScalarFormatter
+
+# Nature requires sans-serif fonts
+plt.rcParams.update({
+    "font.size": 7,
+    "font.sans-serif": ["Helvetica"]})
+#    "font.sans-serif": ["Arial"]})
+#    "font.family": "sans-serif",
+
+cm = 1/2.54  # centimeters in inches
+#    "text.usetex": False,
 
 datafile = "p-pdot_search.dat"
 
@@ -19,7 +30,7 @@ SNRs = np.loadtxt(datafile)
 data = ndimage.zoom(SNRs, 3)
 
 
-fig = plt.figure(figsize=(5,5))
+fig = plt.figure(figsize=(8*cm,8*cm))
 ax = fig.add_subplot(111)
 #plt.figure("P, Pdot search")
 #plt.imshow(SNRs, extent=(Pdots[0]-Pdotstep/2, Pdots[-1]+Pdotstep/2, Ps[0]-Pstep/2, Ps[-1]+Pstep/2), origin='lower', aspect='auto')
@@ -31,6 +42,9 @@ ax.scatter(6.000000000000029e-10, 1091.1688000000026, marker="+", color="darkred
 #ax.colorbar()
 ax.set_xlabel(r"$\dot{P}$ / s s$^{-1}$")
 ax.set_ylabel(r"$P$ /s")
+ax.xaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+ax.yaxis.set_major_formatter(ScalarFormatter(useMathText=True, useOffset=False))
+#ax.ticklabel_format(axis="y", style="plain", useOffset=True)
 fig.savefig("P_Pdot.pdf", bbox_inches="tight")
 fig.savefig("P_Pdot.png", bbox_inches="tight")
 
