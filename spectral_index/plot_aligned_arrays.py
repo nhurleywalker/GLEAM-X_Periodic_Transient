@@ -173,7 +173,7 @@ alpha, err_alpha, amp, err_amp, chi2red = fit_spectrum(freq_array[70:382][ind],f
 
 fig = plt.figure(figsize=(12*cm, 9*cm))
 ax = fig.add_subplot(111)
-ax.errorbar(freqs/1.e6, weighted_fluxes, yerr=err_array*weighted_fluxes, lw=0.5, elinewidth=0.5, fmt=".", markerfacecolor="gray", markeredgecolor="black", ecolor="gray", zorder=1)
+ax.errorbar(freqs/1.e6, weighted_fluxes, yerr=err_array*weighted_fluxes, lw=0.5, elinewidth=0.5, fmt=".", markeredgewidth=0.5, markerfacecolor="gray", markeredgecolor="black", ecolor="gray", zorder=1)
 ax.set_xscale("log")
 ax.set_yscale("log")
 ax.set_xlabel("Frequency / MHz")
