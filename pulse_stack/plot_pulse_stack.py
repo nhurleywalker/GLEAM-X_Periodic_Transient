@@ -14,7 +14,6 @@ from matplotlib import pyplot as plt
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib import gridspec
 import matplotlib.colors as mcol
-import matplotlib.cm as cm
 
 cm = 1/2.54  # centimeters in inches
 
