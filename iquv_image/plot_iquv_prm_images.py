@@ -7,6 +7,15 @@ from astropy.nddata import Cutout2D
 from astropy.wcs import WCS
 from astropy.io import fits
 
+# Sans-serif fonts for Nature
+plt.rcParams.update({
+    "text.usetex": False,
+    "font.family": "sans-serif",
+    "font.size": 7,
+    "font.sans-serif": ["Helvetica"]})
+
+cm = 1/2.54  # centimeters in inches
+
 def format_inset(a, framecolor="white"):
     lon = a.coords[0]
     lat = a.coords[1]
@@ -45,13 +54,15 @@ boxwidth = 50 # pixel width of inset box
 cent = i_map[0].header["NAXIS1"]/2 # center of inset
 # image settings
 iargs = {"vmin" : "-0.5", "vmax" : "1.4", "origin" : "lower", "cmap" : "cubehelix"}
+# box settings
+bargs = {"width" : boxwidth, "height" : boxwidth, "facecolor" : 'none', "edgecolor" : 'white', "lw" : 0.5}
 
-fig = plt.figure(figsize=[12,12])
+fig = plt.figure(figsize=[18*cm,18*cm])
 
 ax = fig.add_axes([0.1, 0.7, 0.3, 0.3], projection = wcs)
 im = ax.imshow(i_map[0].data[0,0], **iargs)
 ax.text(150, 1400, 'Stokes I', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='white'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 lon = ax.coords[0]
 lat = ax.coords[1]
 lon.set_axislabel('')
@@ -65,7 +76,7 @@ cutax = format_inset(cutax)
 ax = fig.add_axes([0.4, 0.7, 0.3, 0.3], projection = wcs)
 ax.imshow(q_map[0].data[0,0], **iargs)
 ax.text(150, 1400, 'Stokes Q', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='white'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 lon = ax.coords[0]
 lat = ax.coords[1]
 lon.set_ticklabel_visible(False)
@@ -80,7 +91,7 @@ cutax = format_inset(cutax)
 ax = fig.add_axes([0.1, 0.4, 0.3, 0.3], projection = wcs)
 ax.imshow(u_map[0].data[0,0], **iargs)
 ax.text(150, 1400, 'Stokes U', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='white'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 lon = ax.coords[0]
 lat = ax.coords[1]
 lon.set_axislabel('')
@@ -94,7 +105,7 @@ cutax = format_inset(cutax)
 ax = fig.add_axes([0.4, 0.4, 0.3, 0.3], projection = wcs)
 ax.imshow(v_map[0].data[0,0], vmin=-0.5, vmax=1.5, origin='lower',cmap='cubehelix')
 ax.text(150, 1400, 'Stokes V', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='white'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 cax = fig.add_axes([0.71, 0.41, 0.015, 0.28])
 char = plt.colorbar(im, cax = cax)
 char.set_label('Jy/beam')#, rotation=270, fontsize=11)
@@ -112,7 +123,7 @@ cutax = format_inset(cutax)
 ax = fig.add_axes([0.1, 0.1, 0.3, 0.3], projection = wcs)
 im = ax.imshow(p_map[0].data[0], vmin=-0.5, vmax=1.5, origin='lower',cmap='cubehelix')
 ax.text(150, 1400, 'Polarised Intensity', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='white'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 lon = ax.coords[0]
 lat = ax.coords[1]
 lon.set_axislabel('Right Ascension (J2000)')
@@ -125,7 +136,7 @@ cutax = format_inset(cutax)
 ax = fig.add_axes([0.4, 0.1, 0.3, 0.3], projection = wcs)
 im = ax.imshow(rm_data, vmin=-75, vmax=75, origin='lower',cmap='RdBu')
 ax.text(150, 1400, 'Rotation Measure', backgroundcolor = "white")
-ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), width=boxwidth, height=boxwidth, facecolor = 'none', edgecolor='black'))
+ax.add_patch(Rectangle((cent-boxwidth/2, cent-boxwidth/2), **bargs))
 cax = fig.add_axes([0.71, 0.11, 0.015, 0.28])
 char = plt.colorbar(im, cax = cax)
 char.set_label('rad m$^{-2}$')#, rotation=270, fontsize=11)
