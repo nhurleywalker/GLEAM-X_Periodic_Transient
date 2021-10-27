@@ -187,7 +187,8 @@ ax.set_ylim([1,40])
 ax.plot(freqs/1.e6, powerlaw(freqs/freqcent, amp, alpha), color="blue", zorder=10, lw=0.5) # Fit
 for l in linefreqs:
     ax.axvline(l/1.e6, color="black", ls="-", lw=0.5)
-fig.savefig("spectrum.pdf", bbox_inches="tight")
+fig.savefig("spectrum.pdf", bbox_inches="tight", dpi=300)
+fig.savefig("spectrum.eps", bbox_inches="tight", dpi=300)
 if err_alpha is None:
     ax.set_title(r"$\alpha = {0:4.2f}$, $\chi^2_r = {1:4.2f}$".format(alpha, chi2red))
 else:
