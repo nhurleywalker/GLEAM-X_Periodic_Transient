@@ -9,8 +9,11 @@ from matplotlib.ticker import FormatStrFormatter
 # Nature requires sans-serif fonts
 plt.rcParams.update({
     "text.usetex": False,
+    "font.size": 7,
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica"]})
+
+cm = 1/2.54  # centimeters in inches
 
 # http://scipy-cookbook.readthedocs.org/items/FittingData.html
 # Define function for calculating a power law
@@ -85,12 +88,15 @@ if makeDyn is True:
     tstart = 0
     tend1 = 200
     tend2 = 150
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(3,5), gridspec_kw={'width_ratios': [tend1, tend2]})
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(0.6*14.8*cm,0.6*24.7*cm), gridspec_kw={'width_ratios': [tend1, tend2]})
     # Before alignment
+    print(len(np.arange(tstart, tend1)))
+    print(len(freqs))
+    print(dat_b4[:,tstart:tend1].shape)
     ax1.set_ylabel("Frequency (MHz)")
-    ax1.pcolormesh(np.arange(tstart, tend1), freqs/1.e6, dat_b4[:,tstart:tend1], vmin=-2, vmax=35., cmap="plasma", edgecolors="face", shading="nearest")
+    ax1.pcolormesh(np.arange(tstart, tend1), freqs/1.e6, dat_b4[:,tstart:tend1], vmin=-2, vmax=35., cmap="plasma", edgecolors="none", shading="nearest", snap=True)
     # After alignment
-    ax2.pcolormesh(np.arange(tstart, tend2), freqs/1.e6, dat[:,tstart:tend2], vmin=-2, vmax=35., cmap="plasma", edgecolors="face", shading="nearest")
+    ax2.pcolormesh(np.arange(tstart, tend2), freqs/1.e6, dat[:,tstart:tend2], vmin=-2, vmax=35., cmap="plasma", edgecolors="none", shading="nearest", snap=True)
     ax2.set_yticks([])
     for ax in [ax1, ax2]:
         ax.set_xlabel("Time (seconds)")
@@ -98,8 +104,12 @@ if makeDyn is True:
         for l in linefreqs:
             ax.axhline(l/1.e6, color="black", ls="-", lw=1)
     plt.subplots_adjust(wspace=0.05, hspace=0.05)
-    fig.savefig("data_2D.png", bbox_inches="tight", dpi=1000)
-    fig.savefig("data_2D.pdf", bbox_inches="tight", dpi=1000)
+    fig.savefig("data_2D.png", bbox_inches="tight", dpi=300)
+    # This comes out extremely low-res. To make the production version I used
+    # "convert" from ImageMagick
+#    fig.savefig("data_2D.eps", bbox_inches="tight", dpi=300)
+    # Note there is a bug that will add white grid lines to the pdf
+    fig.savefig("data_2D.pdf", bbox_inches="tight", dpi=300)
 
 # Transpose
 dat = dat.T
