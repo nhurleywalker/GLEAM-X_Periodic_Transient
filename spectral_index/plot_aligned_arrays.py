@@ -13,6 +13,9 @@ plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica"]})
 
+#    "axes.unicode_minus" : False,
+#    "pdf.fonttype" : 42, 
+#matplotlib.rcParams['ps.fonttype'] = 42
 cm = 1/2.54  # centimeters in inches
 
 # http://scipy-cookbook.readthedocs.org/items/FittingData.html
@@ -82,7 +85,7 @@ for freq in [119, 154, 185, 215]:
         linefreqs.append(padfreqs[0])
 
 # Making this plot is quite slow so make it optional
-makeDyn = True
+makeDyn = False
 if makeDyn is True:
     # Time range to display
     tstart = 0
@@ -90,9 +93,6 @@ if makeDyn is True:
     tend2 = 150
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(0.6*14.8*cm,0.6*24.7*cm), gridspec_kw={'width_ratios': [tend1, tend2]})
     # Before alignment
-    print(len(np.arange(tstart, tend1)))
-    print(len(freqs))
-    print(dat_b4[:,tstart:tend1].shape)
     ax1.set_ylabel("Frequency (MHz)")
     ax1.pcolormesh(np.arange(tstart, tend1), freqs/1.e6, dat_b4[:,tstart:tend1], vmin=-2, vmax=35., cmap="plasma", edgecolors="none", shading="nearest", snap=True)
     # After alignment
@@ -102,14 +102,15 @@ if makeDyn is True:
         ax.set_xlabel("Time (seconds)")
         ax.invert_yaxis()
         for l in linefreqs:
-            ax.axhline(l/1.e6, color="black", ls="-", lw=1)
+            ax.axhline(l/1.e6, color="black", ls="-", lw=0.5)
     plt.subplots_adjust(wspace=0.05, hspace=0.05)
-    fig.savefig("data_2D.png", bbox_inches="tight", dpi=300)
-    # This comes out extremely low-res. To make the production version I used
-    # "convert" from ImageMagick
+    fig.savefig("data_2D.png", bbox_inches="tight", dpi=300, transparent=False)
+    # This comes out extremely low-res. To make the production version I used pdf2ps
+    # pdftops gave better results but the filesize was too large
 #    fig.savefig("data_2D.eps", bbox_inches="tight", dpi=300)
     # Note there is a bug that will add white grid lines to the pdf
-    fig.savefig("data_2D.pdf", bbox_inches="tight", dpi=300)
+    # but it will disappear when converted to eps
+    fig.savefig("data_2D.pdf", bbox_inches="tight", dpi=300, transparent=False)
 
 # Transpose
 dat = dat.T
@@ -170,9 +171,9 @@ err_array = np.sqrt(err_array**2 + (0.05*np.ones(len(err_array)))**2)
 ind = np.where(weighted_fluxes[70:382] > 0)
 alpha, err_alpha, amp, err_amp, chi2red = fit_spectrum(freq_array[70:382][ind],flux_array[70:382][ind],err_array[70:382][ind])
 
-fig = plt.figure()
+fig = plt.figure(figsize=(12*cm, 9*cm))
 ax = fig.add_subplot(111)
-ax.errorbar(freqs/1.e6, weighted_fluxes, yerr=err_array*weighted_fluxes, lw=0, fmt=".", elinewidth=1, markerfacecolor="gray", markeredgecolor="black", ecolor="gray", zorder=1)
+ax.errorbar(freqs/1.e6, weighted_fluxes, yerr=err_array*weighted_fluxes, lw=0.5, elinewidth=0.5, fmt=".", markerfacecolor="gray", markeredgecolor="black", ecolor="gray", zorder=1)
 ax.set_xscale("log")
 ax.set_yscale("log")
 ax.set_xlabel("Frequency / MHz")
@@ -183,9 +184,9 @@ ax.xaxis.set_major_formatter(FormatStrFormatter('%3.0f'))
 ax.yaxis.set_minor_formatter(FormatStrFormatter('%3.0f'))
 ax.xaxis.set_minor_formatter(FormatStrFormatter('%3.0f'))
 ax.set_ylim([1,40])
-ax.plot(freqs/1.e6, powerlaw(freqs/freqcent, amp, alpha), color="blue", zorder=10) # Fit
+ax.plot(freqs/1.e6, powerlaw(freqs/freqcent, amp, alpha), color="blue", zorder=10, lw=0.5) # Fit
 for l in linefreqs:
-    ax.axvline(l/1.e6, color="black", ls="-", lw=1)
+    ax.axvline(l/1.e6, color="black", ls="-", lw=0.5)
 fig.savefig("spectrum.pdf", bbox_inches="tight")
 if err_alpha is None:
     ax.set_title(r"$\alpha = {0:4.2f}$, $\chi^2_r = {1:4.2f}$".format(alpha, chi2red))
