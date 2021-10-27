@@ -9,7 +9,6 @@ from matplotlib import gridspec
 from astropy.visualization import PercentileInterval
 from glob import glob
 import matplotlib.colors as mcol
-import matplotlib.cm as cm
 
 def wordMonth(intMonth):
     if intMonth == 3:
@@ -25,18 +24,21 @@ def wordMonth(intMonth):
 # I want to try red to blue for the frequencies
 cm1 = mcol.LinearSegmentedColormap.from_list("MyCmapName",["c","m"])
 
-# Nice latex
+# Sans-serif fonts for Nature
 plt.rcParams.update({
-    "text.usetex": True,
+    "text.usetex": False,
     "font.family": "sans-serif",
+    "font.size": 7,
     "font.sans-serif": ["Helvetica"]})
+
+cm = 1/2.54  # centimeters in inches
 
 # This is the best value of the period for Pdot = 0, which results in a stack that lines up good enough for the figure
 P = 1091.1708 # s
 
 metas = sorted(glob("*.metafits"), reverse=False)
 
-fig = plt.figure(figsize=(5,4))
+fig = plt.figure(figsize=(10*cm,8*cm))
 # One for each of the profiles, [and one for the colorbar -- if it were working]
 #gs = gridspec.GridSpec(len(metas)+1, 1)
 gs = gridspec.GridSpec(len(metas), 1)
@@ -68,7 +70,7 @@ for i in np.arange(0, len(metas)):
     x = np.mod(dat[0] + float(obsid) + P/2, P) - 0.48*P
     ind = np.where(x!=0)
 #    line1, = ax.plot(x, dat[1], lw=1, color=pl.cm.jet((freqcent - 88.)/(215.-88.)))
-    line1, = ax.plot(x[ind], dat[1][ind], lw=1, color=cm1((freqcent - 88.)/(215.-88.)))
+    line1, = ax.plot(x[ind], dat[1][ind], lw=0.75, color=cm1((freqcent - 88.)/(215.-88.)))
     ax.axes.get_xaxis().set_visible(False)
 #    ax.set_frame_on(False)
     ax.set_yticks([])
@@ -91,3 +93,4 @@ ax.yaxis.get_major_formatter()._usetex = False
 plt.subplots_adjust(hspace=.0)
 fig.savefig("subpulse_comparison.png", bbox_inches="tight", dpi=300)
 fig.savefig("subpulse_comparison.pdf", bbox_inches="tight", dpi=300)
+fig.savefig("subpulse_comparison.eps", bbox_inches="tight", dpi=300)
