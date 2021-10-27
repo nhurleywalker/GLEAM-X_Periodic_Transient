@@ -94,5 +94,6 @@ ax.tick_params(axis='both', which='both',direction='in',right=True,top=True)
 ax.set_xlabel('kT (keV)')
 fig.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=0.0, hspace=0.0)
 
-fig.savefig('magnetar_comparison.pdf',bbox_inches='tight')
+fig.savefig('magnetar_comparison.pdf',bbox_inches='tight', dpi=300)
+fig.savefig('magnetar_comparison.eps',bbox_inches='tight', dpi=300)
 
