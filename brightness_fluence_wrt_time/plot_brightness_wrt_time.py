@@ -16,7 +16,7 @@ import matplotlib.font_manager
 from matplotlib import rc
 # Nature requires sans-serif fonts
 plt.rcParams.update({
-    "text.usetex": False,
+    "text.usetex": True,
     "font.size": 7,
     "font.sans-serif": ["Helvetica"]})
 
@@ -230,9 +230,14 @@ t.format = "ymdhms"
 t = t.value
 ax2.set_xlabel(f"Day since first pulse (at {t[0]}-Jan-{t[2]:02d} {t[3]}:{t[4]}:{t[5]:02.0f})")
 
+for a in [ax, ax2]:
+    a.xaxis.get_major_formatter()._usetex = False
+    a.yaxis.get_major_formatter()._usetex = False
+
 # Label with (a) and (b) as per Nature guidelines
-ax.text(-20, 42, "(a)")
-ax2.text(-20, 540, "(b)")
+# Note that this is why usetex is true in the rc params!
+ax.text(-20, 42, r"\textbf{a}", fontsize=8)
+ax2.text(-20, 535, r"\textbf{b}", fontsize=8)
 
 fig.savefig("brightness_fluence_wrt_time.pdf", bbox_inches="tight", dpi=300)
 ax.legend(loc=3, frameon=False, handletextpad=0.1, borderaxespad=0.1, borderpad=0.2)
