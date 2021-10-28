@@ -17,10 +17,10 @@ from matplotlib import rc
 # Nature requires sans-serif fonts
 plt.rcParams.update({
     "text.usetex": False,
-    "font.family": "sans-serif",
     "font.size": 7,
     "font.sans-serif": ["Helvetica"]})
 
+#    "font.family": "sans-serif",
 from astropy.time import Time
 
 import matplotlib.patches as mpatches
@@ -220,7 +220,6 @@ ax_dup.tick_params(axis="x", direction="in")
 ax_dup.set_xticklabels([])
 plt.subplots_adjust(hspace=0.0)
 
-ax.legend(loc=2, frameon=False, handletextpad=0.1, borderaxespad=0.1, borderpad=0.2)
 ax.axhline(0, alpha=1.0, color="black", lw=0.5, ls=":")
 ax.set_ylabel("Flux density (Jy)")
 
@@ -231,8 +230,13 @@ t.format = "ymdhms"
 t = t.value
 ax2.set_xlabel(f"Day since first pulse (at {t[0]}-Jan-{t[2]:02d} {t[3]}:{t[4]}:{t[5]:02.0f})")
 
-fig.savefig("brightness_fluence_wrt_time.pdf", bbox_inches="tight")
-fig.savefig("brightness_fluence_wrt_time.png", bbox_inches="tight", dpi=1200)
+# Label with (a) and (b) as per Nature guidelines
+ax.text(-20, 42, "(a)")
+ax2.text(-20, 540, "(b)")
+
+fig.savefig("brightness_fluence_wrt_time.pdf", bbox_inches="tight", dpi=300)
+ax.legend(loc=3, frameon=False, handletextpad=0.1, borderaxespad=0.1, borderpad=0.2)
+fig.savefig("brightness_fluence_wrt_time.png", bbox_inches="tight", dpi=300)
 #ax.set_yscale("log")
 
 
