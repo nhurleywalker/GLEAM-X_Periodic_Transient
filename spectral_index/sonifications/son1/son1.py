@@ -21,7 +21,8 @@ ntimebins = arr.shape[1]
 # |       *-------*       |  - original sample
 # |   *---+-------+---*   |  - sample lasting 1 second
 
-iffted_time_per_sample = 1*u.second
+# ... But while I haven't implemented crossfade yet, I'll just map each sample to the same time (0.5 seconds)
+iffted_time_per_sample = 0.5*u.second
 
 # For "ordinary" waves, sample rate is 44100 Hz
 sample_rate = 44100 * u.hertz
@@ -72,4 +73,4 @@ wavmin = np.min(waveform)
 wavmax = np.max(waveform)
 normalised_waveform = (waveform - wavmin)/(wavmax - wavmin) * 2.0 - 1.0 # Now in range -1 < x < 1
 
-wav.write("test.wav", int(sample_rate.value), waveform)
+wav.write("test.wav", int(sample_rate.to(u.hertz).value), waveform)
